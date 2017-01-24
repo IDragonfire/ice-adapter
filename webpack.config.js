@@ -11,5 +11,12 @@ module.exports = {
       { test: /\.ts$/, loader: 'ts-loader' },
       { test: /\.json$/, loader: 'json-loader' }
     ]
+  },
+  node: {
+    console: 'empty',
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    dgram: 'empty'
   }
 }
