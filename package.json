@@ -48,7 +48,8 @@
     "mocha": "3.2.0",
     "typescript": "2.1.4",
     "typescript-formatter": "4.0.1",
-    "uglifyjs": "^2.4.10"
+    "uglifyjs": "^2.4.10",
+    "webpack": "^1.14.0"
   },
   "preferGlobal": true,
   "private": true
