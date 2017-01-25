@@ -1,3 +1,5 @@
+const nodeExternals = require("webpack-node-externals");
+
 module.exports = {  
   entry: './index.ts',
   output: {
@@ -12,10 +14,12 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: 'shebang-loader' },
       { test: /\.ts$/, loader: 'ts-loader' },
-      { test: /\.json$/, loader: 'json-loader' }
+      { test: /\.json$/, loader: 'json-loader' },
+      { test: /\.node$/, loader: 'node-loader'}
     ]
   },
   target: "node",
+  externals: [nodeExternals()],
   node: {
     console: 'empty',
     fs: 'empty',
