@@ -18,5 +18,5 @@ module.exports = {
     ]
   },
   target: 'node',
-  externals: [nodeExternals()]
+  externals: ['aws-sdk', 'node-pre-gyp']
 }
