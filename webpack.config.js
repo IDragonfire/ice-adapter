@@ -1,4 +1,15 @@
-var nodeExternals = require('webpack-node-externals');
+var webpack = require("webpack");
+var path = require("path");
+var fs = require("fs");
+
+var nodeModules = {};
+fs.readdirSync("node_modules")
+  .filter(function(x) {
+    return [".bin"].indexOf(x) === -1;
+  })
+  .forEach(function(mod) {
+    nodeModules[mod] = "commonjs " + mod;
+  });
 
 module.exports = {  
   entry: './index.ts',
@@ -18,5 +29,5 @@ module.exports = {
     ]
   },
   target: 'node',
-  externals: ['aws-sdk', 'node-pre-gyp']
+  externals: nodeModules,
 }
