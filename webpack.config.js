@@ -1,3 +1,5 @@
+var nodeExternals = require('webpack-node-externals');
+
 module.exports = {  
   entry: './index.ts',
   output: {
@@ -15,12 +17,6 @@ module.exports = {
       { test: /\.json$/, loader: 'json-loader' }
     ]
   },
-  target: "node",
-  node: {
-    console: 'empty',
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-    dgram: 'empty'
-  }
+  target: 'node',
+  externals: [nodeExternals()]
 }
